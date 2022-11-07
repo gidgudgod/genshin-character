@@ -1,0 +1,21 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&family=Suez+One&display=swap");
+
+@layer utilities {
+  .char-name {
+    text-shadow: 1px 1px 0px rgba(8, 8, 8, 0.9);
+  }
+}
+
+body {
+  font-family: "Signika Negative", sans-serif;
+}
+
+h1 {
+  font-family: "Suez One", sans-serif;
+}
