@@ -43,9 +43,9 @@ class CharacterList extends HTMLElement {
     contentNavElement.buttonEvents = () => {
       this.classList.remove("hidden");
       if (document.querySelector("character-detail")) {
-        var charDetailElement =
-            document.getElementsByTagName("character-detail"),
-          index;
+        const charDetailElement =
+          document.getElementsByTagName("character-detail");
+        let index;
 
         for (index = charDetailElement.length - 1; index >= 0; index--) {
           charDetailElement[index].parentNode.removeChild(

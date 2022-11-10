@@ -14,13 +14,14 @@ const main = () => {
       console.log(error);
     });
 
-  function removeCharacterDetailElement() {
+  const removeCharacterDetailElement = () => {
     if (
       document.querySelector("character-detail") ||
       document.querySelector("content-nav")
     ) {
-      var charDetailElement = document.getElementsByTagName("character-detail"),
-        index;
+      const charDetailElement =
+        document.getElementsByTagName("character-detail");
+      let index;
 
       for (index = charDetailElement.length - 1; index >= 0; index--) {
         charDetailElement[index].parentNode.removeChild(
@@ -30,15 +31,15 @@ const main = () => {
 
       document.querySelector("content-nav").remove();
     }
-  }
+  };
 
-  function searchCharacter() {
+  const searchCharacter = () => {
     const nameToBeSearch = searchInputElement.value;
     characterListElement.search(nameToBeSearch);
     characterListElement.classList.remove("hidden");
 
     removeCharacterDetailElement();
-  }
+  };
 
   searchFormElement.addEventListener("submit", (e) => {
     e.preventDefault();
