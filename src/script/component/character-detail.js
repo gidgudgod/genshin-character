@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { API_BASE_URL } from '../constants/constants'
 
 class CharacterDetail extends HTMLElement {
   constructor() {
@@ -26,9 +27,9 @@ class CharacterDetail extends HTMLElement {
       >
         <div class="character-cover w-full p-0 rounded-lg bg-accent mb-4 slg:w-[calc(60%-2rem)] md:p-6 slg:p-6 slg:mb-6">
           <img
-            src="https://api.genshin.dev/characters/${_.kebabCase(
-              this._character.endpoint
-            )}/card"
+            src="${API_BASE_URL}characters/${_.kebabCase(
+        this._character.endpoint
+      )}/card"
             class="rounded-lg w-full"
             id="cover-character"
           />
@@ -38,9 +39,9 @@ class CharacterDetail extends HTMLElement {
             <div class="character-header flex flex-row space-x-4 w-full">
               <div class="shrink-0">
                 <img
-                  src="https://api.genshin.dev/characters/${_.kebabCase(
-                    this._character.endpoint
-                  )}/${this._character.iconType}"
+                  src="${API_BASE_URL}characters/${_.kebabCase(
+        this._character.endpoint
+      )}/${this._character.iconType}"
                   alt=""
                   class="character-icon w-28 h-28 rounded-full bg-base object-cover object-top shadow-md shadow-yellow-800/30"
                   id="icon-character"

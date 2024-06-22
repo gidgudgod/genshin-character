@@ -1,10 +1,11 @@
 import _ from "lodash";
 import axios from "axios";
+import { API_BASE_URL } from '../constants/constants'
 
 export default class Characters {
   static getAll() {
     return axios
-      .get("https://api.genshin.dev/characters", {
+      .get(`${API_BASE_URL}characters`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -31,7 +32,7 @@ export default class Characters {
   static getDetail(characterEndpoint) {
     return axios
       .get(
-        `https://api.genshin.dev/characters/${_.kebabCase(characterEndpoint)}`,
+        `${API_BASE_URL}characters/${_.kebabCase(characterEndpoint)}`,
         {
           headers: {
             "Content-Type": "application/json",
